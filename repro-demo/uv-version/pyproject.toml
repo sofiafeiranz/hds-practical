@@ -1,7 +1,7 @@
 [project]
 name = "uv-version"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python environment with uv"
 readme = "README.md"
 authors = [
     { name = "sofiafeiranz", email = "sofiakarmaze@gmail.com" }
