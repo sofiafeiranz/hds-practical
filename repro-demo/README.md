@@ -215,10 +215,9 @@ python analyze.py
 
 natively in the conda environment.
 
-## Conda vs. renv
+## Conda vs. renv vs. uv
 
-Both conda and `renv` allow a computing environment to be recreated from a saved environment specification, but their workflows are somewhat different. Conda uses `environment.yml` to describe the Python version and packages needed for the project, while `renv` uses `renv.lock` to record the R packages required by saved R scripts. I found the conda workflow more direct because the required packages can be explicitly specified when the environment is created, while `renv` depends on the R project and saved scripts when creating the lockfile. For a Python or mixed-software project, I would prefer conda because it can manage both Python packages and other software dependencies, while I would use `renv` for an R-focused project because it integrates naturally with the R project workflow.
-
+Conda, uv, and renv can all be used to create reproducible computing environments, but they are designed for somewhat different workflows. Conda uses environment.yml to specify the Python version and packages, while uv uses pyproject.toml together with uv.lock to manage Python dependencies and recreate the environment with uv sync; renv uses renv.lock to record and restore the R packages required by a project. I found uv to be the simplest and fastest Python workflow because it automatically manages the virtual environment and lockfile, while conda gives more control over Python versions and non-Python software dependencies. For a Python-focused project I would likely prefer uv, for a project requiring broader software dependencies I would use conda, and for an R-focused project I would use renv because it integrates directly with the R project workflow.
 ## AI Assistance
 
 Generative AI assistance used while completing this project is documented separately in:
